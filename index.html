@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- COVER / HERO -->
+  <section class="cover" id="cover">
+    <div class="audio-toggle" id="audioToggle" title="Toggle music">
+      <svg class="icon-sound" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M11 5 6 9H2v6h4l5 4V5z" />
+        <path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7" />
+        <path class="wave" d="M18.5 5.5a9 9 0 0 1 0 13" />
+      </svg>
+    </div>
+
+    <div class="cover-inner">
+      <div class="ornament top">&#10047;</div>
+      <p class="eyebrow">The Wedding Of</p>
+      <h1 class="couple">
+        <span>Hasna Sherin</span>
+        <span class="amp">&amp;</span>
+        <span>Mohammed Nishad</span>
+      </h1>
+      <p class="sub">You are cordially invited to celebrate our special day</p>
+      <div class="ornament bottom">&#10047;</div>
+
+      <button class="open-btn" id="openBtn">
+        <span class="env-icon">&#9993;</span>
+        <span>Tap to Open Invitation</span>
+      </button>
+      <p class="hint">Please scroll after opening</p>
+    </div>
+  </section>
+
+  <!-- MAIN INVITATION -->
+  <main class="invite" id="invite" aria-hidden="true">
+
+    <!-- Opening -->
+    <section class="section opening">
+      <div class="frame">
+        <p class="arabic">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1575;&#1604;&#1604;&#1617;&#1648;&#1607;&#1616; &#1575;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1648;&#1606;&#1616; &#1575;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</p>
+        <p class="arabic salaam-ar">&#1575;&#1604;&#1587;&#1617;&#1614;&#1604;&#1575;&#1605;&#1615; &#1593;&#1614;&#1604;&#1614;&#1610;&#1618;&#1603;&#1615;&#1605;&#1618; &#1608;&#1614;&#1585;&#1614;&#1581;&#1618;&#1605;&#1614;&#1577;&#1615; &#1575;&#1604;&#1604;&#1617;&#1648;&#1607;&#1616; &#1608;&#1614;&#1576;&#1614;&#1585;&#1614;&#1603;&#1614;&#1575;&#1578;&#1615;&#1607;&#1615;</p>
+        <div class="divider"><span></span>&#10047;<span></span></div>
+        <p class="prose">
+          With hearts full of gratitude to the Almighty, we invite you to share
+          in the joy as we begin our journey together.
+        </p>
+      </div>
+    </section>
+
+    <!-- Couple card -->
+    <section class="section couple-card">
+      <p class="eyebrow-dark">The Blessed Union</p>
+      <div class="card">
+        <div class="name-block">
+          <h2 class="name-script">Hasna Sherin</h2>
+          <p class="parent">D/o Mr. Hamsa</p>
+        </div>
+        <div class="amp-lg">&amp;</div>
+        <div class="name-block">
+          <h2 class="name-script">Mohammed Nishad</h2>
+          <p class="parent">S/o Mr. Abdurahiman &amp; Mrs. Rukhiya</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Save the date / expandable card -->
+    <section class="section save-date">
+      <p class="eyebrow-dark">Save the Date</p>
+      <button class="date-card" id="dateCard" aria-expanded="false">
+        <div class="date-face">
+          <span class="tap-label">Tap to reveal</span>
+          <div class="seal">&#10047;</div>
+        </div>
+        <div class="date-reveal">
+          <p class="day">Thursday</p>
+          <div class="date-row">
+            <span class="d-num">07</span>
+            <div class="d-stack">
+              <span class="d-month">May</span>
+              <span class="d-year">2026</span>
+            </div>
+          </div>
+          <p class="after-noon">4:30 PM onwards</p>
+        </div>
+      </button>
+    </section>
+
+    <!-- Countdown -->
+    <section class="section countdown">
+      <p class="eyebrow-dark">Counting Down</p>
+      <div class="timer" id="timer">
+        <div class="unit"><span class="val" id="dd">00</span><span class="lbl">Days</span></div>
+        <div class="unit"><span class="val" id="hh">00</span><span class="lbl">Hours</span></div>
+        <div class="unit"><span class="val" id="mm">00</span><span class="lbl">Minutes</span></div>
+        <div class="unit"><span class="val" id="ss">00</span><span class="lbl">Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- Venue / location -->
+    <section class="section venue">
+      <p class="eyebrow-dark">Venue</p>
+      <div class="venue-card">
+        <h3 class="venue-name">Jalsa Auditorium</h3>
+        <p class="venue-addr">Kerala, India</p>
+        <div class="venue-actions">
+          <a class="pill" href="https://share.google/ZMSPFxGAQTDhSVKBC" target="_blank" rel="noopener">
+            <span>&#9873;</span> Open in Maps
+          </a>
+          <a class="pill" id="calBtn" href="#">
+            <span>&#128197;</span> Add to Calendar
+          </a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=JALSA+AUDITORIUM+Kerala&amp;output=embed"
+            loading="lazy" title="Venue map"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="section schedule">
+      <p class="eyebrow-dark">Order of Events</p>
+      <ul class="timeline">
+        <li>
+          <div class="time">4:30 PM</div>
+          <div class="event">
+            <h4>Bride Family Welcoming</h4>
+            <p>Greeting the bride&rsquo;s family with love</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">5:30 PM</div>
+          <div class="event">
+            <h4>Reception</h4>
+            <p>Join us to celebrate the new beginning</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">6:30 PM</div>
+          <div class="event">
+            <h4>Dinner</h4>
+            <p>Evening supper together</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Gifts / blessings -->
+    <section class="section gifts">
+      <div class="frame soft">
+        <div class="icon-gift">&#127873;</div>
+        <h3>Your Presence is Our Present</h3>
+        <p>
+          Your duas and blessings mean more to us than any gift.
+          We are grateful for the love you bring to our day.
+        </p>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="section closing">
+      <div class="ornament top">&#10047;</div>
+      <p class="closing-line">Together, a new beginning &mdash;</p>
+      <h2 class="couple-sm">
+        <span>Hasna Sherin</span><span class="amp">&amp;</span><span>Mohammed Nishad</span>
+      </h2>
+      <p class="small-note">With love, from our families to yours</p>
+      <div class="ornament bottom">&#10047;</div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with &#10084; for our big day</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
