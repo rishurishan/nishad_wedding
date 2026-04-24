@@ -81,24 +81,31 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.section').forEach((s) => io.observe(s));
 
-// --- Audio (optional placeholder) ---
+// --- Audio ---
+// Place your music file at /home/rishan/wedding/music.mp3
+const AUDIO_SRC = 'music.mp3';
 const audioToggle = document.getElementById('audioToggle');
-let audio = null;
+const audio = new Audio(AUDIO_SRC);
+audio.loop = true;
+audio.preload = 'auto';
 let audioOn = false;
 
-function tryPlayAudio() {
-  // Placeholder: no audio file is bundled. Replace with your own.
-  // const src = 'music.mp3';
-  // if (!audio) { audio = new Audio(src); audio.loop = true; }
-  // audio.play().then(() => { audioOn = true; audioToggle.classList.add('playing'); audioToggle.classList.remove('muted'); }).catch(()=>{});
+function setPlayingUI(on) {
+  audioOn = on;
+  audioToggle.classList.toggle('playing', on);
+  audioToggle.classList.toggle('muted', !on);
 }
 
-audioToggle.addEventListener('click', () => {
-  if (!audio) {
-    audioToggle.classList.toggle('muted');
-    return;
-  }
-  if (audioOn) { audio.pause(); audioOn = false; audioToggle.classList.remove('playing'); audioToggle.classList.add('muted'); }
-  else { audio.play(); audioOn = true; audioToggle.classList.add('playing'); audioToggle.classList.remove('muted'); }
+function tryPlayAudio() {
+  audio.play()
+    .then(() => setPlayingUI(true))
+    .catch(() => setPlayingUI(false));
+}
+
+audioToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (audioOn) { audio.pause(); setPlayingUI(false); }
+  else { tryPlayAudio(); }
 });
-audioToggle.classList.add('muted');
+
+setPlayingUI(false);
