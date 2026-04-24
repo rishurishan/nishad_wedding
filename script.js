@@ -1,6 +1,6 @@
 // --- Configuration: edit these ---
 const WEDDING_DATE = new Date('2026-05-07T16:30:00+05:30');
-const EVENT_TITLE = 'Hasna Sherin & Mohammed Nishad Wedding';
+const EVENT_TITLE = 'Nishad & Hasna Sherin Wedding';
 const EVENT_LOCATION = 'Jalsa Auditorium, Kerala';
 const EVENT_DESCRIPTION = 'Join us to celebrate our special day.';
 
